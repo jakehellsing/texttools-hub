@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AdSenseScript } from "@/components/adsense-script";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ADSENSE_CLIENT, ADSENSE_ENABLED } from "@/lib/adsense";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -29,6 +30,11 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   robots: { index: true, follow: true },
+  // AdSense site-verification meta tag — emitted only when a real
+  // ca-pub-* client ID is configured.
+  ...(ADSENSE_ENABLED
+    ? { other: { "google-adsense-account": ADSENSE_CLIENT } }
+    : {}),
 };
 
 export const viewport: Viewport = {
