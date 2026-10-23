@@ -1,15 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { ADSENSE_CLIENT, ADSENSE_ENABLED } from "@/lib/adsense";
 
 declare global {
   interface Window {
     adsbygoogle?: unknown[];
   }
 }
-
-export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "";
-export const ADSENSE_ENABLED = ADSENSE_CLIENT.startsWith("ca-pub-");
 
 interface AdSlotProps {
   /** AdSense ad unit slot ID, e.g. "1234567890". */

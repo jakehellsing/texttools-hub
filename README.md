@@ -63,11 +63,14 @@ No ad code is emitted unless `NEXT_PUBLIC_ADSENSE_CLIENT` is a real
 ## AdSense setup checklist (manual, after approval)
 
 1. Apply for AdSense with the production domain; wait for approval.
-2. Create ad units → copy slot IDs into env vars above; redeploy.
-3. Add `public/ads.txt` containing `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`
-   (use your own publisher ID — do **not** commit a real ID here).
-4. Configure a consent banner (e.g. Google's own CMP) if serving EEA/UK
-   traffic.
+2. Set `NEXT_PUBLIC_ADSENSE_CLIENT` to your `ca-pub-*` ID and redeploy —
+   this activates the loader script **and** generates `/ads.txt` with the
+   matching publisher ID automatically.
+3. Create ad units → copy slot IDs into `NEXT_PUBLIC_ADSENSE_SLOT_*` env
+   vars; redeploy. (Or enable "Auto ads" in the AdSense dashboard and skip
+   slot IDs entirely.)
+4. Configure consent messaging (AdSense → Privacy & messaging) if serving
+   EEA/UK traffic.
 
 ## Deploying to Vercel
 

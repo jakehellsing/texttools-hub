@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { ADSENSE_CLIENT, ADSENSE_ENABLED } from "@/components/ad-slot";
+import { ADSENSE_CLIENT, ADSENSE_ENABLED } from "@/lib/adsense";
 
 /**
  * Loads the AdSense loader script once, site-wide, but only when a real
