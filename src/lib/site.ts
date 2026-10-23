@@ -13,5 +13,5 @@ export const site = {
   ),
   /** Email shown on the contact page. Set NEXT_PUBLIC_CONTACT_EMAIL to override. */
   contactEmail:
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@example.com",
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "jsomongia@gmail.com",
 } as const;
